@@ -1,0 +1,90 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:id="@+id/_main">
+		<LinearLayout
+			android:id="@+id/linear1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#FFFFFF"
+			android:orientation="vertical"
+			android:fitsSystemWindows="true">
+			<LinearLayout
+				android:id="@+id/linear2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="15dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="15dp"
+				android:layout_marginBottom="10dp"
+				android:padding="8dp"
+				android:background="#F5F5F5"
+				android:gravity="center_vertical"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/textview1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Loading..."
+					android:textSize="20sp"
+					android:textStyle="bold"
+					android:textColor="#9E9E9E"
+					android:layout_weight="1" />
+				<ImageView
+					android:id="@+id/ai"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_marginRight="10dp"
+					android:src="@drawable/bot"
+					android:scaleType="fitXY" />
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/circleimageview1"
+					android:layout_width="40dp"
+					android:layout_height="30dp"
+					android:src="@drawable/default_pfp"
+					app:civ_border_width="0dp"
+					app:civ_border_color="#008DCD"
+					app:civ_circle_background_color="#00FFFFFF"
+					app:civ_border_overlay="false" />
+			</LinearLayout>
+			<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+				android:id="@+id/swiperefreshlayout1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingLeft="15dp"
+				android:paddingRight="15dp"
+				android:layout_weight="1">
+				<ListView
+					android:id="@+id/listview1"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:padding="8dp"
+					android:dividerHeight="0dp"
+					android:divider="@null"
+					android:choiceMode="none"
+					tools:listitem="@layout/posts" />
+			</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+			<com.google.android.gms.ads.AdView
+				android:id="@+id/adview1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:adSize="BANNER"
+				app:adUnitId="ca-app-pub-5617050185794481/7344647638" />
+		</LinearLayout>
+	</LinearLayout>
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/_fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:layout_gravity="right|bottom"
+		app:srcCompat="@drawable/icon_add_round" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
